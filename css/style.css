@@ -1,0 +1,141 @@
+/* Declaración de variables */
+:root {
+    /* Colores primarios */
+    --darkCyan: hsl(185, 75%, 39%);
+    --veryDarkdeSaturatedBlue: hsl(229, 23%, 23%);
+    --darkGrayishBlue: hsl(227, 10%, 46%);
+
+    /* Colores Neutros */
+    --darkGray: hsl(0, 0%, 59%);
+
+    /* Tipografia */
+    --fuente: 'Kumbh Sans', sans-serif;
+
+    /* Colores personales */
+    --blanco:#fff;
+
+}
+html {
+    /* para hacer que 1rem = 10 px */
+    font-size: 62.5%;
+    /*Snippet de https://www-paulirish-com.translate.goog/2012/box-sizing-border-box-ftw/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc*/
+    /* inicio Snippet modelo caja de: www-paulirish-com */
+    box-sizing: border-box;
+    /* fin  Snippet modelo caja : www-paulirish-com*/
+}
+
+/*Snippet de https://www-paulirish-com.translate.goog/2012/box-sizing-border-box-ftw/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es-419&_x_tr_pto=sc*/
+/* inicio Snippet modelo caja de: www-paulirish-com */
+/*
+ eel primer "*" indica que seleccione todos los elementos del html y a esos se les aplicara el box-sizing : ingherit
+ al cual el padding, el margen y el borde se tomara dekk width declarado, es decir si declaras 200 de width
+ y tambien le defines un pading de 20px el elemento seguira midiendo 200 sin importar cuanto aumente el padding o el border
+*/
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+/* fin  Snippet modelo caja : www-paulirish-com*/
+
+body {
+    font-family: var(--fuente);
+    background-color: var(--darkCyan);
+    background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
+    background-repeat: no-repeat, no-repeat;
+    /* 
+    * vw es la unidad de ancho de la ventana gráfica representa un porcentaje del ancho de la ventana gráfica.
+    * 50vw significa el 50% del ancho de la ventana gráfica.
+    *
+    *v h es la unidad de altura de la ventana gráfica representa un porcentaje de la altura de la ventana gráfica.
+    * 50vh significa el 50% de la altura de la ventana gráfica.
+    */
+    /* Se esta indicando que siempre empuje hacai aarriba y hacia abajo la mitad */
+    background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+    
+}
+h1 {
+    font-size: 1.8rem;
+    
+}
+
+h2 {
+    line-height: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+
+    /* Si queremos alinear verticalmente hay que definirle un height */
+    align-items: center;
+    height: 100vh;
+    
+    
+    
+}
+.card {
+    background-color: var(--blanco);
+    width: 327px;
+    border-radius: 2rem;
+    /* Ovwerflow:hidden hace que el sobrante de la imagen (en caso de que sea mas grandeque el contenedor)  este oculto*/
+    overflow: hidden;
+    
+    /* Sombras */
+    box-shadow: 1px 2px 10px rgb(73, 73, 73);
+    
+}
+.card-header {
+    
+}
+.card-header img {
+    /* Ocupa todo el anncho de su contenedor */
+    width: 100%;
+    /* Con display block eliminamos el espacio fantasma */
+    display: block;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    /* Alisgn items es para centrar cuando usamos la dirección de columnas */
+    align-items: center;
+    /* Solo el borde de la parte de abajo */
+    border-bottom: 1px solid var(--darkGray);
+}
+
+.card-body__photo {
+    border-radius: 50%;
+    border: 5px solid var(--blanco);
+    margin-top: calc(-48px - 5px);
+}
+
+.card-body__age {
+    color: var(--darkGray);
+    font-size: 15px;
+    font-weight: 400;
+    margin-left: .7rem;
+}
+
+.card-body__country {
+    font-size: 1.8rem;
+    color: var(--darkGray);
+    margin-bottom: 2rem;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-footer__element {
+    /* al ser textos no es necsario hacer uso de algun display */
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-footer__element h2 {
+    font-size: 1.8rem;
+}
+.card-footer__element label {
+    letter-spacing: 1px;
+}
